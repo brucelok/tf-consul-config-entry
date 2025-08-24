@@ -23,10 +23,10 @@ resource "consul_config_entry" "service_defaults_api_v1" {
 }
 
 resource "consul_config_entry" "service_router_api" {
-  #  depends_on = [
-  #    consul_config_entry.service_defaults_api,
-  #    consul_config_entry.service_defaults_api_v1
-  #  ]
+  depends_on = [
+    consul_config_entry.service_defaults_api,
+    consul_config_entry.service_defaults_api_v1
+  ]
 
   kind = "service-router"
   name = "api"
